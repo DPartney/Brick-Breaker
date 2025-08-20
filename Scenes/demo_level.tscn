@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5866xux0a8j3"]
+
+[ext_resource type="Texture2D" uid="uid://c4k2cafqfaxl8" path="res://Brick-Breaker/Assets/mine_background.jpg" id="1_gst84"]
+[ext_resource type="Script" uid="uid://cb4d2gghh271o" path="res://Brick-Breaker/Scripts/player.gd" id="2_v8sdl"]
+[ext_resource type="Texture2D" uid="uid://d1b831l82en4j" path="res://Brick-Breaker/Assets/icon.svg" id="3_hp860"]
+[ext_resource type="Texture2D" uid="uid://dgw0oeq1n2fsl" path="res://Brick-Breaker/Assets/brick.jpg" id="4_v8sdl"]
+
+[node name="DemoLevel" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_gst84")
+
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("lane_positions")]
+z_index = 10
+position = Vector2(975, 850)
+script = ExtResource("2_v8sdl")
+lane_positions = [NodePath("../Lane Positions/Lane 1"), NodePath("../Lane Positions/Lane 2"), NodePath("../Lane Positions/Lane 3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("3_hp860")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -200.0
+offset_right = 255.0
+offset_bottom = 315.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(160, 515)
+layout_mode = 2
+texture = ExtResource("4_v8sdl")
+expand_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(160, 515)
+layout_mode = 2
+texture = ExtResource("4_v8sdl")
+expand_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="GridContainer"]
+custom_minimum_size = Vector2(160, 515)
+layout_mode = 2
+texture = ExtResource("4_v8sdl")
+expand_mode = 5
+
+[node name="Lane Positions" type="Node2D" parent="."]
+
+[node name="Lane 1" type="Marker2D" parent="Lane Positions"]
+position = Vector2(811, 850)
+
+[node name="Lane 2" type="Marker2D" parent="Lane Positions"]
+position = Vector2(975, 850)
+
+[node name="Lane 3" type="Marker2D" parent="Lane Positions"]
+position = Vector2(1138, 850)
