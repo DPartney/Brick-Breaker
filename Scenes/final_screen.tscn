@@ -1,0 +1,60 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpu5h4fyvibct"]
+
+[ext_resource type="Script" uid="uid://1cu6jbj2eb1h" path="res://Brick-Breaker/Scripts/final_screen.gd" id="1_uh6x0"]
+[ext_resource type="Texture2D" uid="uid://b80imakx7ovbn" path="res://Brick-Breaker/Assets/Soaked_Cat.png" id="2_4fc8w"]
+[ext_resource type="Theme" uid="uid://bkvojyx1i6gfa" path="res://Brick-Breaker/Assets/theme.tres" id="3_koryn"]
+
+[node name="FinalScreen" type="Node"]
+script = ExtResource("1_uh6x0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_4fc8w")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.5
+offset_top = 100.0
+offset_right = 266.5
+offset_bottom = 222.0
+grow_horizontal = 2
+theme = ExtResource("3_koryn")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Final Score: "
+horizontal_alignment = 1
+
+[node name="Restart" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = -61.0
+offset_right = 175.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_koryn")
+text = "Restart"
+
+[node name="Exit" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -175.0
+offset_top = 110.0
+offset_right = 175.0
+offset_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_koryn")
+text = "Exit"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

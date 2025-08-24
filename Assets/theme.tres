@@ -1,0 +1,25 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bkvojyx1i6gfa"]
+
+[ext_resource type="FontFile" uid="uid://dpcpxfa4prrqw" path="res://Brick-Breaker/Assets/Fonts/Honk-Regular-VariableFont_MORF,SHLN.ttf" id="1_avii5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_avii5"]
+bg_color = Color(0.883906, 2.97448e-05, 0.636114, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6i3n4"]
+bg_color = Color(0.883906, 2.97448e-05, 0.636114, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6484u"]
+bg_color = Color(0.883906, 2.97448e-05, 0.636114, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wnrdw"]
+bg_color = Color(0.883906, 2.97448e-05, 0.636114, 1)
+
+[resource]
+Button/font_sizes/font_size = 100
+Button/fonts/font = ExtResource("1_avii5")
+Button/styles/focus = SubResource("StyleBoxFlat_avii5")
+Button/styles/hover = SubResource("StyleBoxFlat_6i3n4")
+Button/styles/normal = SubResource("StyleBoxFlat_6484u")
+Button/styles/pressed = SubResource("StyleBoxFlat_wnrdw")
+Label/font_sizes/font_size = 100
+Label/fonts/font = ExtResource("1_avii5")

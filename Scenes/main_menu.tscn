@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfh4d8dhpbfkx"]
+[gd_scene load_steps=5 format=3 uid="uid://dfh4d8dhpbfkx"]
 
 [ext_resource type="Script" uid="uid://di1d56uxrhx0q" path="res://Brick-Breaker/Scripts/main_menu.gd" id="1_6484u"]
 [ext_resource type="Texture2D" uid="uid://dl11p4wcxbbq5" path="res://Brick-Breaker/Assets/background.jpg" id="1_h8e1e"]
 [ext_resource type="FontFile" uid="uid://dpcpxfa4prrqw" path="res://Brick-Breaker/Assets/Fonts/Honk-Regular-VariableFont_MORF,SHLN.ttf" id="1_uluug"]
+[ext_resource type="Theme" uid="uid://bkvojyx1i6gfa" path="res://Brick-Breaker/Assets/theme.tres" id="4_lt42h"]
 
 [node name="Root" type="Node"]
 script = ExtResource("1_6484u")
@@ -47,13 +48,13 @@ alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_uluug")
-theme_override_font_sizes/font_size = 100
+theme = ExtResource("4_lt42h")
 text = "Start"
 icon_alignment = 1
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_lt42h")
 theme_override_fonts/font = ExtResource("1_uluug")
 theme_override_font_sizes/font_size = 100
 text = "Exit"
