@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://xoycr3808mx1"]
+
+[ext_resource type="Texture2D" uid="uid://b625hsk1uo1xk" path="res://Brick-Breaker/Assets/pixel_brick.jpg" id="1_io6eo"]
+[ext_resource type="Script" uid="uid://ewl8qqx64qiq" path="res://Brick-Breaker/Scripts/demo_level.gd" id="1_pnxy1"]
+[ext_resource type="Script" uid="uid://cb4d2gghh271o" path="res://Brick-Breaker/Scripts/player.gd" id="2_6bm7o"]
+[ext_resource type="Theme" uid="uid://bkvojyx1i6gfa" path="res://Brick-Breaker/Assets/theme.tres" id="4_6bm7o"]
+[ext_resource type="Texture2D" uid="uid://hk4li0tve0al" path="res://Brick-Breaker/Assets/player_boxing.png" id="4_pnxy1"]
+
+[node name="TestScene" type="Node"]
+script = ExtResource("1_pnxy1")
+
+[node name="Lanes" type="GridContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 515.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 0
+columns = 3
+
+[node name="Lane1" type="TextureRect" parent="Lanes"]
+custom_minimum_size = Vector2(640, 540)
+layout_mode = 2
+texture = ExtResource("1_io6eo")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Lane2" type="TextureRect" parent="Lanes"]
+custom_minimum_size = Vector2(640, 540)
+layout_mode = 2
+texture = ExtResource("1_io6eo")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Lane3" type="TextureRect" parent="Lanes"]
+custom_minimum_size = Vector2(640, 540)
+layout_mode = 2
+texture = ExtResource("1_io6eo")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -10
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.425243, 0.336597, 0.305699, 1)
+
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("lane_positions")]
+z_index = 10
+position = Vector2(960, 760)
+script = ExtResource("2_6bm7o")
+lane_positions = [NodePath("../Lane Positions/Lane 1"), NodePath("../Lane Positions/Lane 2"), NodePath("../Lane Positions/Lane 3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture_filter = 1
+scale = Vector2(10, 10)
+texture = ExtResource("4_pnxy1")
+
+[node name="Timer" type="Label" parent="Player"]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -103.0
+offset_right = 180.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_6bm7o")
+theme_override_font_sizes/font_size = 40
+text = "00:00
+"
+horizontal_alignment = 1
+
+[node name="Lane Positions" type="Node2D" parent="."]
+
+[node name="Lane 1" type="Marker2D" parent="Lane Positions"]
+position = Vector2(384, 760)
+
+[node name="Lane 2" type="Marker2D" parent="Lane Positions"]
+position = Vector2(960, 760)
+
+[node name="Lane 3" type="Marker2D" parent="Lane Positions"]
+position = Vector2(1536, 760)

@@ -36,9 +36,8 @@ func _physics_process(delta: float) -> void:
 		generate_lanes()
 
 func update_timer():
-	var minutes = time_left / 60
 	var seconds = fmod(time_left, 60)
-	$Timer.text = "%02d:%05.2f" % [minutes, seconds]
+	$Player/Timer.text = "%05.2f" % [seconds]
 
 func add_time():
 	time_left += time_gain
@@ -85,7 +84,9 @@ func break_success(lane_index: int):
 func bomb_brick_triggered(lane_index: int):
 	$Lanes.get_child(lane_index).texture = active_bombed_brick
 	lanes[lane_index] = 0
-	await get_tree().create_timer(.5).timeout
+	if (is_inside_tree()):
+		await get_tree().create_timer(.5).timeout
+	
 	if ($Player.lane_index == lane_index):
 		player_lost()
 		
