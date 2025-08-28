@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hk4li0tve0al"
-path="res://.godot/imported/player_boxing.png-0dd1056ef24bb655d8123d4d0be7242e.ctex"
+uid="uid://dkkm10augx880"
+path="res://.godot/imported/cave_base_texture_1c_black_fill_1.png-6aba510e239f03f3e8999dd330f98cb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Brick-Breaker/Assets/player_boxing.png"
-dest_files=["res://.godot/imported/player_boxing.png-0dd1056ef24bb655d8123d4d0be7242e.ctex"]
+source_file="res://Brick-Breaker/Assets/cave_base_texture_1c_black_fill_1.png"
+dest_files=["res://.godot/imported/cave_base_texture_1c_black_fill_1.png-6aba510e239f03f3e8999dd330f98cb1.ctex"]
 
 [params]
 

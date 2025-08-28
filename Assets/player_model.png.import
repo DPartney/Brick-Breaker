@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bycwcjb7hng40"
-path="res://.godot/imported/Cave_base_texture_1b_desat_red_fill.png-b397485e8263bcc7bafc5eddab7d2c72.ctex"
+uid="uid://dgu51ymu2c8qm"
+path="res://.godot/imported/player_model.png-94f7cef33bdda5d6126bea1563990e7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Brick-Breaker/Assets/Cave_base_texture_1b_desat_red_fill.png"
-dest_files=["res://.godot/imported/Cave_base_texture_1b_desat_red_fill.png-b397485e8263bcc7bafc5eddab7d2c72.ctex"]
+source_file="res://Brick-Breaker/Assets/player_model.png"
+dest_files=["res://.godot/imported/player_model.png-94f7cef33bdda5d6126bea1563990e7d.ctex"]
 
 [params]
 

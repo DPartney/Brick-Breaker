@@ -1,11 +1,17 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5866xux0a8j3"]
 
-[ext_resource type="Texture2D" uid="uid://c4k2cafqfaxl8" path="res://Brick-Breaker/Assets/mine_background.jpg" id="1_gst84"]
 [ext_resource type="Script" uid="uid://ewl8qqx64qiq" path="res://Brick-Breaker/Scripts/demo_level.gd" id="1_hp860"]
 [ext_resource type="Script" uid="uid://cb4d2gghh271o" path="res://Brick-Breaker/Scripts/player.gd" id="2_v8sdl"]
-[ext_resource type="Texture2D" uid="uid://d1b831l82en4j" path="res://Brick-Breaker/Assets/icon.svg" id="3_hp860"]
-[ext_resource type="Texture2D" uid="uid://b625hsk1uo1xk" path="res://Brick-Breaker/Assets/pixel_brick.jpg" id="4_v8sdl"]
 [ext_resource type="Theme" uid="uid://bkvojyx1i6gfa" path="res://Brick-Breaker/Assets/theme.tres" id="6_yifvb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gst84"]
+load_path = "res://.godot/imported/mine_background.jpg-8f0d1a0436eaafc4603a2ac1ec6bd97e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v8sdl"]
+load_path = "res://.godot/imported/icon.svg-72808f9cb8bbcc6ee5221b3c0488e77f.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hp860"]
+load_path = "res://.godot/imported/pixel_brick.jpg-895cad9df0f3e825fd9ea822206683bf.ctex"
 
 [node name="DemoLevel" type="Node"]
 script = ExtResource("1_hp860")
@@ -13,7 +19,7 @@ script = ExtResource("1_hp860")
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_gst84")
+texture = SubResource("CompressedTexture2D_gst84")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("lane_positions")]
 z_index = 10
@@ -22,7 +28,7 @@ script = ExtResource("2_v8sdl")
 lane_positions = [NodePath("../Lane Positions/Lane 1"), NodePath("../Lane Positions/Lane 2"), NodePath("../Lane Positions/Lane 3")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("3_hp860")
+texture = SubResource("CompressedTexture2D_v8sdl")
 
 [node name="Lanes" type="GridContainer" parent="."]
 anchors_preset = 8
@@ -41,21 +47,21 @@ columns = 3
 [node name="Lane1" type="TextureRect" parent="Lanes"]
 custom_minimum_size = Vector2(160, 515)
 layout_mode = 2
-texture = ExtResource("4_v8sdl")
+texture = SubResource("CompressedTexture2D_hp860")
 expand_mode = 5
 stretch_mode = 6
 
 [node name="Lane2" type="TextureRect" parent="Lanes"]
 custom_minimum_size = Vector2(160, 515)
 layout_mode = 2
-texture = ExtResource("4_v8sdl")
+texture = SubResource("CompressedTexture2D_hp860")
 expand_mode = 5
 stretch_mode = 6
 
 [node name="Lane3" type="TextureRect" parent="Lanes"]
 custom_minimum_size = Vector2(160, 515)
 layout_mode = 2
-texture = ExtResource("4_v8sdl")
+texture = SubResource("CompressedTexture2D_hp860")
 expand_mode = 5
 stretch_mode = 6
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0yfievsidmc7"
-path="res://.godot/imported/Cave_texture_1B_grey_fill.png-48f9eafdb6cf9e8cfb8dced52b400c07.ctex"
+uid="uid://dn14blklgnui2"
+path="res://.godot/imported/floor_2.png-fe903eae0555900d0e5343fda7accc40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Brick-Breaker/Assets/Cave_texture_1B_grey_fill.png"
-dest_files=["res://.godot/imported/Cave_texture_1B_grey_fill.png-48f9eafdb6cf9e8cfb8dced52b400c07.ctex"]
+source_file="res://Brick-Breaker/Assets/floor_2.png"
+dest_files=["res://.godot/imported/floor_2.png-fe903eae0555900d0e5343fda7accc40.ctex"]
 
 [params]
 

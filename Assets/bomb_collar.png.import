@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jje6q5euw7r2"
-path="res://.godot/imported/Cave_base_texture_1A_white_fill.png-8a6d608116eff4e5e17caae338296373.ctex"
+uid="uid://dptxlsvh3oo8"
+path="res://.godot/imported/bomb_collar.png-8ef7e66a615df7fdbe9c9b1589c66589.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Brick-Breaker/Assets/Cave_base_texture_1A_white_fill.png"
-dest_files=["res://.godot/imported/Cave_base_texture_1A_white_fill.png-8a6d608116eff4e5e17caae338296373.ctex"]
+source_file="res://Brick-Breaker/Assets/bomb_collar.png"
+dest_files=["res://.godot/imported/bomb_collar.png-8ef7e66a615df7fdbe9c9b1589c66589.ctex"]
 
 [params]
 

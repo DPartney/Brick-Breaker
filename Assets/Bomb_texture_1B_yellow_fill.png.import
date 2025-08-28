@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjv302dq88oha"
-path="res://.godot/imported/Cave_base_1A_Texture_black_fill.png-0951e68d816f1ddb02b357042c19c694.ctex"
+uid="uid://cpr5p2aljep8v"
+path="res://.godot/imported/Bomb_texture_1B_yellow_fill.png-3c63a9589cb19872478ede17a829845d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Brick-Breaker/Assets/Cave_base_1A_Texture_black_fill.png"
-dest_files=["res://.godot/imported/Cave_base_1A_Texture_black_fill.png-0951e68d816f1ddb02b357042c19c694.ctex"]
+source_file="res://Brick-Breaker/Assets/Bomb_texture_1B_yellow_fill.png"
+dest_files=["res://.godot/imported/Bomb_texture_1B_yellow_fill.png-3c63a9589cb19872478ede17a829845d.ctex"]
 
 [params]
 

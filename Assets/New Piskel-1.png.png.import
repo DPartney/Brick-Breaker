@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o1j76hoh846m"
-path="res://.godot/imported/Cave_base_texture_1A_desat_red_fill.png-5443219df2a0657c8226fc1de530c268.ctex"
+uid="uid://o70e7s4chxv6"
+path="res://.godot/imported/New Piskel-1.png.png-0f01ea4cddb3e28b9e8ea3ca17283f7f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Brick-Breaker/Assets/Cave_base_texture_1A_desat_red_fill.png"
-dest_files=["res://.godot/imported/Cave_base_texture_1A_desat_red_fill.png-5443219df2a0657c8226fc1de530c268.ctex"]
+source_file="res://Brick-Breaker/Assets/New Piskel-1.png.png"
+dest_files=["res://.godot/imported/New Piskel-1.png.png-0f01ea4cddb3e28b9e8ea3ca17283f7f.ctex"]
 
 [params]
 

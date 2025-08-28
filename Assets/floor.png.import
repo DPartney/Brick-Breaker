@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b625hsk1uo1xk"
-path="res://.godot/imported/pixel_brick.jpg-895cad9df0f3e825fd9ea822206683bf.ctex"
+uid="uid://yt33bgitt8jf"
+path="res://.godot/imported/floor.png-306908d1328814fb13c32c9a87bf5c13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Brick-Breaker/Assets/pixel_brick.jpg"
-dest_files=["res://.godot/imported/pixel_brick.jpg-895cad9df0f3e825fd9ea822206683bf.ctex"]
+source_file="res://Brick-Breaker/Assets/floor.png"
+dest_files=["res://.godot/imported/floor.png-306908d1328814fb13c32c9a87bf5c13.ctex"]
 
 [params]
 

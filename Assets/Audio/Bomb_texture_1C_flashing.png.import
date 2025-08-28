@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4k2cafqfaxl8"
-path="res://.godot/imported/mine_background.jpg-8f0d1a0436eaafc4603a2ac1ec6bd97e.ctex"
+uid="uid://4el0agu6qlbp"
+path="res://.godot/imported/Bomb_texture_1C_flashing.png-71a32e4bffc897d68d85af903179b478.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Brick-Breaker/Assets/mine_background.jpg"
-dest_files=["res://.godot/imported/mine_background.jpg-8f0d1a0436eaafc4603a2ac1ec6bd97e.ctex"]
+source_file="res://Brick-Breaker/Assets/Audio/Bomb_texture_1C_flashing.png"
+dest_files=["res://.godot/imported/Bomb_texture_1C_flashing.png-71a32e4bffc897d68d85af903179b478.ctex"]
 
 [params]
 
