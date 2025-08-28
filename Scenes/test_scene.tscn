@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://xoycr3808mx1"]
+[gd_scene load_steps=9 format=3 uid="uid://xoycr3808mx1"]
 
-[ext_resource type="Texture2D" uid="uid://b625hsk1uo1xk" path="res://Brick-Breaker/Assets/pixel_brick.jpg" id="1_io6eo"]
 [ext_resource type="Script" uid="uid://ewl8qqx64qiq" path="res://Brick-Breaker/Scripts/demo_level.gd" id="1_pnxy1"]
 [ext_resource type="Script" uid="uid://cb4d2gghh271o" path="res://Brick-Breaker/Scripts/player.gd" id="2_6bm7o"]
+[ext_resource type="Texture2D" uid="uid://ctw6juuwkgbaw" path="res://Brick-Breaker/Assets/cave_base_texture_1c_grey_fill.png" id="2_6s5pi"]
+[ext_resource type="Texture2D" uid="uid://jje6q5euw7r2" path="res://Brick-Breaker/Assets/Cave_base_texture_1A_white_fill.png" id="3_4qgmt"]
 [ext_resource type="Theme" uid="uid://bkvojyx1i6gfa" path="res://Brick-Breaker/Assets/theme.tres" id="4_6bm7o"]
+[ext_resource type="Texture2D" uid="uid://twyckkeq53do" path="res://Brick-Breaker/Assets/Cave_Floor_Texture_1A_Black_fill.png" id="4_mu3ww"]
 [ext_resource type="Texture2D" uid="uid://hk4li0tve0al" path="res://Brick-Breaker/Assets/player_boxing.png" id="4_pnxy1"]
+[ext_resource type="Texture2D" uid="uid://dwfow5tx7kmi4" path="res://Brick-Breaker/Assets/Cave_Floor_Texture_1A_Grey_Fill.png" id="5_8mf4s"]
 
 [node name="TestScene" type="Node"]
 script = ExtResource("1_pnxy1")
@@ -21,28 +24,59 @@ theme_override_constants/h_separation = 0
 columns = 3
 
 [node name="Lane1" type="TextureRect" parent="Lanes"]
+texture_filter = 1
 custom_minimum_size = Vector2(640, 540)
 layout_mode = 2
-texture = ExtResource("1_io6eo")
+texture = ExtResource("2_6s5pi")
 expand_mode = 2
 stretch_mode = 6
 
 [node name="Lane2" type="TextureRect" parent="Lanes"]
+texture_filter = 1
 custom_minimum_size = Vector2(640, 540)
 layout_mode = 2
-texture = ExtResource("1_io6eo")
+texture = ExtResource("2_6s5pi")
 expand_mode = 2
 stretch_mode = 6
 
 [node name="Lane3" type="TextureRect" parent="Lanes"]
+texture_filter = 1
 custom_minimum_size = Vector2(640, 540)
 layout_mode = 2
-texture = ExtResource("1_io6eo")
+texture = ExtResource("2_6s5pi")
 expand_mode = 2
 stretch_mode = 6
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Lane4" type="TextureRect" parent="Lanes"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(640, 540)
+layout_mode = 2
+texture = ExtResource("3_4qgmt")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Lane5" type="TextureRect" parent="Lanes"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(640, 540)
+layout_mode = 2
+texture = ExtResource("3_4qgmt")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Lane6" type="TextureRect" parent="Lanes"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(640, 540)
+layout_mode = 2
+texture = ExtResource("3_4qgmt")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="ColorRect" type="TextureRect" parent="."]
 z_index = -10
+texture_filter = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -50,10 +84,66 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -960.0
 offset_top = -540.0
-offset_right = 960.0
+offset_right = -320.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.425243, 0.336597, 0.305699, 1)
+texture = ExtResource("4_mu3ww")
+
+[node name="ColorRect3" type="TextureRect" parent="."]
+z_index = -10
+texture_filter = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -540.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_mu3ww")
+
+[node name="ColorRect4" type="TextureRect" parent="."]
+z_index = -10
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -320.0
+offset_top = -540.0
+offset_right = 320.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_mu3ww")
+
+[node name="ColorRect2" type="TextureRect" parent="."]
+visible = false
+z_index = -10
+texture_filter = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_8mf4s")
+
+[node name="ColorRect5" type="TextureRect" parent="."]
+visible = false
+z_index = -10
+texture_filter = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -540.0
+offset_right = 960.0
+grow_vertical = 0
+texture = ExtResource("5_8mf4s")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("lane_positions")]
 z_index = 10

@@ -9,8 +9,8 @@ var time_left = 8
 var time_gain = 1.5
 
 # Lane Visuals
-var brick = load("res://Brick-Breaker/Assets/pixel_brick.jpg")
-var bombed_brick = load("res://Brick-Breaker/Assets/Soaked_Cat.png")
+var brick = load("res://Brick-Breaker/Assets/Cave_texture_1B_grey_fill.png")
+var bombed_brick = load("res://Brick-Breaker/Assets/Cave_base_texture_1b_desat_red_fill.png")
 var active_bombed_brick = load("res://Brick-Breaker/Assets/brick.jpg")
 var destroyed = load("res://Brick-Breaker/Assets/background.jpg")
 
