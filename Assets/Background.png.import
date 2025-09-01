@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o70e7s4chxv6"
-path="res://.godot/imported/New Piskel-1.png.png-0f01ea4cddb3e28b9e8ea3ca17283f7f.ctex"
+path="res://.godot/imported/Background.png-3c7575eb2d4c27864bf2c6a8be543f39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Brick-Breaker/Assets/New Piskel-1.png.png"
-dest_files=["res://.godot/imported/New Piskel-1.png.png-0f01ea4cddb3e28b9e8ea3ca17283f7f.ctex"]
+source_file="res://Brick-Breaker/Assets/Background.png"
+dest_files=["res://.godot/imported/Background.png-3c7575eb2d4c27864bf2c6a8be543f39.ctex"]
 
 [params]
 

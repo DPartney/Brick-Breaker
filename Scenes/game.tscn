@@ -1,22 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://xoycr3808mx1"]
+[gd_scene load_steps=12 format=3 uid="uid://xoycr3808mx1"]
 
-[ext_resource type="Script" uid="uid://ewl8qqx64qiq" path="res://Brick-Breaker/Scripts/demo_level.gd" id="1_pnxy1"]
-[ext_resource type="Script" uid="uid://cb4d2gghh271o" path="res://Brick-Breaker/Scripts/player.gd" id="2_6bm7o"]
-[ext_resource type="Texture2D" uid="uid://o70e7s4chxv6" path="res://Brick-Breaker/Assets/New Piskel-1.png.png" id="2_a52je"]
-[ext_resource type="Texture2D" uid="uid://dkkm10augx880" path="res://Brick-Breaker/Assets/cave_base_texture_1c_black_fill_1.png" id="2_mu3ww"]
-[ext_resource type="Texture2D" uid="uid://yt33bgitt8jf" path="res://Brick-Breaker/Assets/floor.png" id="3_8mf4s"]
-[ext_resource type="Theme" uid="uid://bkvojyx1i6gfa" path="res://Brick-Breaker/Assets/theme.tres" id="4_6bm7o"]
-[ext_resource type="Texture2D" uid="uid://dn14blklgnui2" path="res://Brick-Breaker/Assets/floor_2.png" id="4_a52je"]
-[ext_resource type="Texture2D" uid="uid://dgu51ymu2c8qm" path="res://Brick-Breaker/Assets/player_model.png" id="6_mu3ww"]
-[ext_resource type="AudioStream" uid="uid://dxorldymmcsku" path="res://Brick-Breaker/Assets/Audio/player_move.mp3" id="9_8mf4s"]
-[ext_resource type="Texture2D" uid="uid://4el0agu6qlbp" path="res://Brick-Breaker/Assets/Audio/Bomb_texture_1C_flashing.png" id="9_q7ds1"]
+[ext_resource type="Script" uid="uid://ewl8qqx64qiq" path="res://Brick-Breaker/Scripts/demo_level.gd" id="1_pv3m0"]
+[ext_resource type="Texture2D" uid="uid://o70e7s4chxv6" path="res://Brick-Breaker/Assets/Background.png" id="2_fhc46"]
+[ext_resource type="Texture2D" uid="uid://dkkm10augx880" path="res://Brick-Breaker/Assets/cave_base_texture_1c_black_fill_1.png" id="3_ituv7"]
+[ext_resource type="Script" uid="uid://cb4d2gghh271o" path="res://Brick-Breaker/Scripts/player.gd" id="4_pasr6"]
+[ext_resource type="Texture2D" uid="uid://dgu51ymu2c8qm" path="res://Brick-Breaker/Assets/player_model.png" id="5_kfjjy"]
+[ext_resource type="Theme" uid="uid://bkvojyx1i6gfa" path="res://Brick-Breaker/Assets/theme.tres" id="6_nvk7r"]
+[ext_resource type="AudioStream" uid="uid://dxorldymmcsku" path="res://Brick-Breaker/Assets/Audio/player_move.mp3" id="7_65its"]
+[ext_resource type="Texture2D" uid="uid://4el0agu6qlbp" path="res://Brick-Breaker/Assets/Audio/Bomb_texture_1C_flashing.png" id="8_bw2yp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0ywk"]
-atlas = ExtResource("9_q7ds1")
+atlas = ExtResource("8_bw2yp")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lyhnj"]
-atlas = ExtResource("9_q7ds1")
+atlas = ExtResource("8_bw2yp")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e0ywk"]
@@ -34,12 +32,12 @@ animations = [{
 }]
 
 [node name="TestScene" type="Node"]
-script = ExtResource("1_pnxy1")
+script = ExtResource("1_pv3m0")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("2_a52je")
+texture = ExtResource("2_fhc46")
 expand_mode = 2
 
 [node name="Lanes2" type="GridContainer" parent="."]
@@ -58,21 +56,21 @@ columns = 3
 texture_filter = 1
 custom_minimum_size = Vector2(433, 540)
 layout_mode = 2
-texture = ExtResource("2_mu3ww")
+texture = ExtResource("3_ituv7")
 expand_mode = 4
 
 [node name="Lane2" type="TextureRect" parent="Lanes2"]
 texture_filter = 1
 custom_minimum_size = Vector2(433, 540)
 layout_mode = 2
-texture = ExtResource("2_mu3ww")
+texture = ExtResource("3_ituv7")
 expand_mode = 4
 
 [node name="Lane3" type="TextureRect" parent="Lanes2"]
 texture_filter = 1
 custom_minimum_size = Vector2(433, 540)
 layout_mode = 2
-texture = ExtResource("2_mu3ww")
+texture = ExtResource("3_ituv7")
 expand_mode = 4
 
 [node name="Lanes" type="GridContainer" parent="."]
@@ -90,82 +88,33 @@ columns = 3
 texture_filter = 1
 custom_minimum_size = Vector2(433, 540)
 layout_mode = 2
-texture = ExtResource("2_mu3ww")
+texture = ExtResource("3_ituv7")
 expand_mode = 4
 
 [node name="Lane2" type="TextureRect" parent="Lanes"]
 texture_filter = 1
 custom_minimum_size = Vector2(433, 540)
 layout_mode = 2
-texture = ExtResource("2_mu3ww")
+texture = ExtResource("3_ituv7")
 expand_mode = 4
 
 [node name="Lane3" type="TextureRect" parent="Lanes"]
 texture_filter = 1
 custom_minimum_size = Vector2(433, 540)
 layout_mode = 2
-texture = ExtResource("2_mu3ww")
+texture = ExtResource("3_ituv7")
 expand_mode = 4
-
-[node name="ColorRect2" type="TextureRect" parent="."]
-visible = false
-z_index = -10
-texture_filter = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -960.0
-offset_top = -540.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("3_8mf4s")
-flip_h = true
-
-[node name="ColorRect5" type="TextureRect" parent="."]
-visible = false
-z_index = -10
-texture_filter = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -540.0
-offset_right = 960.0
-grow_vertical = 0
-texture = ExtResource("3_8mf4s")
-
-[node name="ColorRect6" type="TextureRect" parent="."]
-visible = false
-z_index = -10
-texture_filter = 1
-offset_right = 960.0
-offset_bottom = 540.0
-texture = ExtResource("4_a52je")
-
-[node name="ColorRect7" type="TextureRect" parent="."]
-visible = false
-z_index = -10
-texture_filter = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -960.0
-offset_bottom = 540.0
-grow_horizontal = 0
-texture = ExtResource("4_a52je")
-flip_h = true
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("lane_positions")]
 z_index = 10
 position = Vector2(960, 760)
-script = ExtResource("2_6bm7o")
+script = ExtResource("4_pasr6")
 lane_positions = [NodePath("../Lane Positions/Lane 1"), NodePath("../Lane Positions/Lane 2"), NodePath("../Lane Positions/Lane 3")]
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture_filter = 1
 scale = Vector2(10, 10)
-texture = ExtResource("6_mu3ww")
+texture = ExtResource("5_kfjjy")
 
 [node name="Timer" type="Label" parent="Player"]
 z_index = 10
@@ -181,7 +130,7 @@ offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme = ExtResource("4_6bm7o")
+theme = ExtResource("6_nvk7r")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "00:00
@@ -189,16 +138,8 @@ text = "00:00
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
-stream = ExtResource("9_8mf4s")
+stream = ExtResource("7_65its")
 volume_db = 20.0
-
-[node name="ColorRect" type="ColorRect" parent="Player"]
-visible = false
-offset_left = -60.0
-offset_top = -109.0
-offset_right = 96.0
-offset_bottom = -47.0
-color = Color(0.481789, 0.481789, 0.481789, 1)
 
 [node name="Lane Positions" type="Node2D" parent="."]
 
