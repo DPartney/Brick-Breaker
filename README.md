@@ -17,5 +17,5 @@
 
 ### Cloning the Repository  
 ```bash
-git clone https://github.com/<your-repo-username>/bracker.git
-cd bracker
+git clone https://github.com/<your-repo-username>/brick-breaker.git
+cd brick-breaker
