@@ -21,6 +21,7 @@ offset_right = 266.5
 offset_bottom = 222.0
 grow_horizontal = 2
 theme = ExtResource("3_koryn")
+theme_override_font_sizes/font_size = 50
 text = "Final Score: "
 horizontal_alignment = 1
 

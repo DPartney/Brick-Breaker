@@ -1,40 +1,61 @@
-[gd_scene load_steps=12 format=3 uid="uid://xoycr3808mx1"]
+[gd_scene load_steps=17 format=3 uid="uid://xoycr3808mx1"]
 
-[ext_resource type="Script" uid="uid://ewl8qqx64qiq" path="res://Brick-Breaker/Scripts/demo_level.gd" id="1_pv3m0"]
+[ext_resource type="Script" uid="uid://ewl8qqx64qiq" path="res://Brick-Breaker/Scripts/game.gd" id="1_pv3m0"]
 [ext_resource type="Texture2D" uid="uid://o70e7s4chxv6" path="res://Brick-Breaker/Assets/Background.png" id="2_fhc46"]
-[ext_resource type="Texture2D" uid="uid://dkkm10augx880" path="res://Brick-Breaker/Assets/cave_base_texture_1c_black_fill_1.png" id="3_ituv7"]
+[ext_resource type="Texture2D" uid="uid://dkkm10augx880" path="res://Brick-Breaker/Assets/base_brick.png" id="3_ituv7"]
 [ext_resource type="Script" uid="uid://cb4d2gghh271o" path="res://Brick-Breaker/Scripts/player.gd" id="4_pasr6"]
 [ext_resource type="Texture2D" uid="uid://dgu51ymu2c8qm" path="res://Brick-Breaker/Assets/player_model.png" id="5_kfjjy"]
 [ext_resource type="Theme" uid="uid://bkvojyx1i6gfa" path="res://Brick-Breaker/Assets/theme.tres" id="6_nvk7r"]
 [ext_resource type="AudioStream" uid="uid://dxorldymmcsku" path="res://Brick-Breaker/Assets/Audio/player_move.mp3" id="7_65its"]
-[ext_resource type="Texture2D" uid="uid://4el0agu6qlbp" path="res://Brick-Breaker/Assets/Audio/Bomb_texture_1C_flashing.png" id="8_bw2yp"]
+[ext_resource type="AudioStream" uid="uid://ca6dle6qt6ub5" path="res://Brick-Breaker/Assets/Audio/punch_brick.ogg" id="8_fhc46"]
+[ext_resource type="AudioStream" uid="uid://bcrbg5ntnfsft" path="res://Brick-Breaker/Assets/Audio/player_dead.wav" id="9_kfjjy"]
+[ext_resource type="AudioStream" uid="uid://bx47wb05h2rbp" path="res://Brick-Breaker/Assets/Audio/bomb_exploded.wav" id="10_ituv7"]
+[ext_resource type="AudioStream" uid="uid://dr6j8w6dil1vb" path="res://Brick-Breaker/Assets/Audio/collar_countdown.wav" id="10_nvk7r"]
+[ext_resource type="AudioStream" uid="uid://yooriguewj65" path="res://Brick-Breaker/Assets/Audio/bricks_breaking.wav" id="10_pasr6"]
+[ext_resource type="AudioStream" uid="uid://bgaru1xpy7jun" path="res://Brick-Breaker/Assets/Audio/BrackerTheme.wav" id="11_pasr6"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e0ywk"]
-atlas = ExtResource("8_bw2yp")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="Animation" id="Animation_kfjjy"]
+resource_name = "Fade_In"
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lyhnj"]
-atlas = ExtResource("8_bw2yp")
-region = Rect2(0, 64, 64, 64)
+[sub_resource type="Animation" id="Animation_pasr6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e0ywk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e0ywk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lyhnj")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nvk7r"]
+_data = {
+&"Fade_In": SubResource("Animation_kfjjy"),
+&"RESET": SubResource("Animation_pasr6")
+}
 
-[node name="TestScene" type="Node"]
+[node name="Game" type="Node"]
+process_mode = 3
 script = ExtResource("1_pv3m0")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_fhc46")
@@ -106,6 +127,7 @@ texture = ExtResource("3_ituv7")
 expand_mode = 4
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("lane_positions")]
+process_mode = 1
 z_index = 10
 position = Vector2(960, 760)
 script = ExtResource("4_pasr6")
@@ -137,24 +159,68 @@ text = "00:00
 "
 horizontal_alignment = 1
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+[node name="Move" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource("7_65its")
-volume_db = 20.0
+volume_db = 15.0
+bus = &"Rest"
+
+[node name="Punch" type="AudioStreamPlayer2D" parent="Player"]
+process_mode = 3
+stream = ExtResource("8_fhc46")
+volume_db = 10.0
+bus = &"Rest"
+
+[node name="Dead" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("9_kfjjy")
+volume_db = 24.0
+bus = &"Death"
+
+[node name="Collar Countdown" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("10_nvk7r")
+volume_db = -10.0
 
 [node name="Lane Positions" type="Node2D" parent="."]
 
 [node name="Lane 1" type="Marker2D" parent="Lane Positions"]
-position = Vector2(384, 760)
+position = Vector2(500, 760)
 
 [node name="Lane 2" type="Marker2D" parent="Lane Positions"]
-position = Vector2(960, 760)
+position = Vector2(920, 760)
 
 [node name="Lane 3" type="Marker2D" parent="Lane Positions"]
-position = Vector2(1536, 760)
+position = Vector2(1400, 760)
 
-[node name="Bomba" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(2905, 358)
-scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_e0ywk")
-frame_progress = 0.811531
+[node name="Bomb Exploded" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("10_ituv7")
+volume_db = 10.0
+pitch_scale = 0.8
+bus = &"Rest"
+
+[node name="Brick Crumbles" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("10_pasr6")
+volume_db = 3.0
+pitch_scale = 0.75
+bus = &"Rest"
+
+[node name="Background Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_pasr6")
+volume_db = 24.0
+autoplay = true
+bus = &"Rest"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 0)
+z_index = 20
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_nvk7r")
+}

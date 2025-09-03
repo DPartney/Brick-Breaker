@@ -1,0 +1,164 @@
+[gd_scene load_steps=13 format=3 uid="uid://xoycr3808mx1"]
+
+[ext_resource type="Script" uid="uid://ewl8qqx64qiq" path="res://Brick-Breaker/Scripts/demo_level.gd" id="1_pv3m0"]
+[ext_resource type="Texture2D" uid="uid://o70e7s4chxv6" path="res://Brick-Breaker/Assets/Background.png" id="2_fhc46"]
+[ext_resource type="Texture2D" uid="uid://dkkm10augx880" path="res://Brick-Breaker/Assets/cave_base_texture_1c_black_fill_1.png" id="3_ituv7"]
+[ext_resource type="Script" uid="uid://cb4d2gghh271o" path="res://Brick-Breaker/Scripts/player.gd" id="4_pasr6"]
+[ext_resource type="Texture2D" uid="uid://dgu51ymu2c8qm" path="res://Brick-Breaker/Assets/player_model.png" id="5_kfjjy"]
+[ext_resource type="Theme" uid="uid://bkvojyx1i6gfa" path="res://Brick-Breaker/Assets/theme.tres" id="6_nvk7r"]
+[ext_resource type="AudioStream" uid="uid://dxorldymmcsku" path="res://Brick-Breaker/Assets/Audio/player_move.mp3" id="7_65its"]
+[ext_resource type="Texture2D" uid="uid://4el0agu6qlbp" path="res://Brick-Breaker/Assets/Bomb_texture_1C_flashing.png" id="8_bw2yp"]
+[ext_resource type="AudioStream" uid="uid://ca6dle6qt6ub5" path="res://Brick-Breaker/Assets/Audio/punch_brick.ogg" id="8_fhc46"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0ywk"]
+atlas = ExtResource("8_bw2yp")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyhnj"]
+atlas = ExtResource("8_bw2yp")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e0ywk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0ywk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyhnj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="TestScene" type="Node"]
+script = ExtResource("1_pv3m0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_fhc46")
+expand_mode = 2
+
+[node name="Lanes2" type="GridContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_right = 940.0
+offset_bottom = 540.0
+grow_horizontal = 2
+scale = Vector2(0.55, 0.25)
+theme_override_constants/h_separation = 0
+columns = 3
+
+[node name="Lane1" type="TextureRect" parent="Lanes2"]
+texture_filter = 1
+custom_minimum_size = Vector2(433, 540)
+layout_mode = 2
+texture = ExtResource("3_ituv7")
+expand_mode = 4
+
+[node name="Lane2" type="TextureRect" parent="Lanes2"]
+texture_filter = 1
+custom_minimum_size = Vector2(433, 540)
+layout_mode = 2
+texture = ExtResource("3_ituv7")
+expand_mode = 4
+
+[node name="Lane3" type="TextureRect" parent="Lanes2"]
+texture_filter = 1
+custom_minimum_size = Vector2(433, 540)
+layout_mode = 2
+texture = ExtResource("3_ituv7")
+expand_mode = 4
+
+[node name="Lanes" type="GridContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -668.0
+offset_right = 632.0
+offset_bottom = 540.0
+grow_horizontal = 2
+theme_override_constants/h_separation = 0
+columns = 3
+
+[node name="Lane1" type="TextureRect" parent="Lanes"]
+texture_filter = 1
+custom_minimum_size = Vector2(433, 540)
+layout_mode = 2
+texture = ExtResource("3_ituv7")
+expand_mode = 4
+
+[node name="Lane2" type="TextureRect" parent="Lanes"]
+texture_filter = 1
+custom_minimum_size = Vector2(433, 540)
+layout_mode = 2
+texture = ExtResource("3_ituv7")
+expand_mode = 4
+
+[node name="Lane3" type="TextureRect" parent="Lanes"]
+texture_filter = 1
+custom_minimum_size = Vector2(433, 540)
+layout_mode = 2
+texture = ExtResource("3_ituv7")
+expand_mode = 4
+
+[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("lane_positions")]
+z_index = 10
+position = Vector2(960, 760)
+script = ExtResource("4_pasr6")
+lane_positions = [NodePath("../Lane Positions/Lane 1"), NodePath("../Lane Positions/Lane 2"), NodePath("../Lane Positions/Lane 3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture_filter = 1
+scale = Vector2(10, 10)
+texture = ExtResource("5_kfjjy")
+
+[node name="Timer" type="Label" parent="Player"]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -83.0
+offset_right = 190.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_nvk7r")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "00:00
+"
+horizontal_alignment = 1
+
+[node name="Move" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("7_65its")
+volume_db = 20.0
+
+[node name="Punch" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("8_fhc46")
+
+[node name="Lane Positions" type="Node2D" parent="."]
+
+[node name="Lane 1" type="Marker2D" parent="Lane Positions"]
+position = Vector2(384, 760)
+
+[node name="Lane 2" type="Marker2D" parent="Lane Positions"]
+position = Vector2(960, 760)
+
+[node name="Lane 3" type="Marker2D" parent="Lane Positions"]
+position = Vector2(1536, 760)
+
+[node name="Bomba" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2905, 358)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_e0ywk")
+frame_progress = 0.811531

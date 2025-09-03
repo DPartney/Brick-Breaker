@@ -18,7 +18,7 @@ func _physics_process(_delta: float) -> void:
 		break_brick()
 
 func move_player():
-	$AudioStreamPlayer2D.play()
+	$Move.play()
 	match(lane_index):
 		0:
 			global_position = lane_positions[0].global_position
@@ -28,4 +28,4 @@ func move_player():
 			global_position = lane_positions[2].global_position
 
 func break_brick():
-	breaking.emit(lane_index)
+	breaking.emit(lane_index, true)
