@@ -1,5 +1,7 @@
 # Bracker  
 
+<img width="2559" height="1494" alt="image" src="https://github.com/user-attachments/assets/f835013a-fa44-4b80-b4fb-5da183db8e66" />
+
 **Bracker** is a fast-paced arcade-style game developed in **Godot Engine** by *Dakota Partney* and *Evan Kohnman*. Punch the bricks while avoiding the bombs to keep yourself alive! 
 
 ## Features  
