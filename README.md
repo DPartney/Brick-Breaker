@@ -24,4 +24,4 @@ cd brick-breaker
 ```
 
 ### Run & Play!
-Run the main_menu scene and play! Contriubtions are welcome, we'd love to see what improvments you can make.
+Run the main_menu scene and play! Contriubtions are welcome, we'd love to see what improvements you can make.
