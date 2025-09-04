@@ -21,3 +21,7 @@
 ```bash
 git clone https://github.com/<your-repo-username>/brick-breaker.git
 cd brick-breaker
+```
+
+### Run & Play!
+Run the main_menu scene and play! Contriubtions are welcome, we'd love to see what improvments you can make.
